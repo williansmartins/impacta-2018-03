@@ -22,4 +22,8 @@ public class Principal {
 	public void metodoNarc(){
 		System.out.println("Olá");
 	}
+
+	public void metodoWillians2(){
+		System.out.println("Olá");
+	}
 }
