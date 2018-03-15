@@ -8,4 +8,8 @@ public class Principal {
 	public void metodoWillians(){
 		
 	}
+	
+	public void metodoNarc(){
+		System.out.println("Olá");
+	}
 }
