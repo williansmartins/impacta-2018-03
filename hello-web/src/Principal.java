@@ -10,6 +10,9 @@ public class Principal {
 	}
 	
 	public void metodoEdgar(){
-		
+	}
+	
+	public void metodoNarc(){
+		System.out.println("Olá");
 	}
 }
