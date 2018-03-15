@@ -12,4 +12,11 @@ public class Principal {
 	public void caiqueFialhoMacedo(){
 		System.out.println("Me chamo caique!");
 	}
+	
+	public void metodoEdgar(){
+	}
+	
+	public void metodoNarc(){
+		System.out.println("Olá");
+	}
 }
