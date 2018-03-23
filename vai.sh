@@ -1,0 +1,1 @@
+git add . && git commit -m "add arquivos" && git pull && git push
