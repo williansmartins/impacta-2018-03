@@ -1,4 +1,4 @@
-package br.com.impacta;
+package br.com.impacta.controller;
 
 import java.math.BigDecimal;
 import java.util.Date;
