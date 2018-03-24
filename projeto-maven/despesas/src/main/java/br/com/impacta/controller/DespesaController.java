@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.impacta.model.Categoria;
@@ -18,7 +19,7 @@ public class DespesaController {
 
 	}
 
-	@RequestMapping(name="buscar")
+	@RequestMapping(value="/buscar", method=RequestMethod.GET)  
 	@ResponseBody
 	public Despesa buscar() {
 		Despesa despesa = new Despesa();
