@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,8 +16,10 @@ import br.com.impacta.model.Despesa;
 @RequestMapping("/despesa")
 public class DespesaController {
 
-	public void inserir() {
-
+	@RequestMapping(value="/inserir", method=RequestMethod.POST)  
+	@ResponseBody
+	public Despesa inserir(@RequestBody Despesa entrada) {
+		return entrada;
 	}
 
 	@RequestMapping(value="/buscar", method=RequestMethod.GET)  
