@@ -1,5 +1,5 @@
 Apresentar:
 
-1- gulp
+1- gulp(browserSync), npm install
 2- placeholder = https://placeimg.com/750/301/people
 3- lorem ipsum = https://br.lipsum.com/
