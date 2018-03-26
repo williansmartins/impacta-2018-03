@@ -3,3 +3,51 @@ Apresentar:
 1- gulp(browserSync), npm install
 2- placeholder = https://placeimg.com/750/301/people
 3- lorem ipsum = https://br.lipsum.com/
+4- Fluxo trello
+
+
+
+
+
+
+=== cronograma
+	- apresentar projeto MVC puro com XML
+	- apresentar projeto MVC puro com Annotations
+	- pausa
+	- apresentar persistências (o que é JPA / Hibernate)
+	- apresentar projeto puro com hibernate
+	- apresentar projeto com Spring Boot
+	- pausa
+	- apresentar proposta de software (cabelereiro)
+	- apresentar protótipo
+	- trello + git (bitbucket - professorwillians@gmail.com)
+	- rotas necessárias no back-end
+		- login
+		- crud usuarios
+		- crud produtos
+		- crud serviços
+			- inserir
+			- buscar
+			- buscarTodos
+			- buscarLogado
+			- recebimentos do dia
+
+	- entidades
+		- usuario
+			- id: auto
+			- nome: varchar
+			- porcentagem: integer
+			- tipo: varchar (cliente, funcionario e admin)
+
+		- servico
+			- id: auto
+			- descricao: varchar
+			- valor: float
+			- porcentagem: integer
+
+		- lancamento
+			- valor
+			- servico: servico_id
+			- cliente: usuario_id
+			- funcionario: usuario_id
+			- data: date
