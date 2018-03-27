@@ -3,8 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.impacta</groupId>
 	<packaging>war</packaging>
+	<artifactId>cabelereiro-back</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<name>cabelereiro-front</name>
+	<name>cabelereiro-back</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -82,5 +83,5 @@
 		</plugins>
 	</build>
 
-	<artifactId>projeto-hibernate</artifactId>
+	
 </project>
