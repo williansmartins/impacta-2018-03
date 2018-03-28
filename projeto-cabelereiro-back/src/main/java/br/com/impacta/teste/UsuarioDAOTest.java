@@ -6,7 +6,7 @@ import org.junit.Test;
 import br.com.impacta.dao.JpaGenericDao;
 import br.com.impacta.model.Usuario;
 
-public class UsuarioDAO {
+public class UsuarioDAOTest {
 	JpaGenericDao<Usuario> dao = new JpaGenericDao<Usuario>();
 	
 	@Test

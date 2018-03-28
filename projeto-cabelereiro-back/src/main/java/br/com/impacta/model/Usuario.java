@@ -3,6 +3,7 @@ package br.com.impacta.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -15,6 +16,8 @@ public class Usuario implements Serializable {
 	private Integer id;
 	private String nome;
 	private float porcentagem;
+	
+	@Enumerated
 	private TipoUsuario tipo;
 	
 	public Integer getId() {

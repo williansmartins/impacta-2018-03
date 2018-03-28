@@ -1,7 +1,7 @@
 package br.com.impacta.model;
 
 public enum TipoUsuario {
-	CLIENTE("Cliente"), FUNCIONARIO("Funcionario"), ADMINITRADOR("Adminitrador");
+	CLIENTE("Cliente"), FUNCIONARIO("Funcionario"), ADMINISTRADOR("Administrador");
 	
 	private String nome;
 

@@ -2,7 +2,7 @@ package br.com.impacta.teste;
 
 import br.com.impacta.model.Servico;
 
-public class ServicoMassa {
+public class ServicoMassaTest {
 	
 	Servico popularServico(){
 		Servico servico = new Servico();

@@ -15,7 +15,7 @@ public class ServicoDAOTest {
 	
 	@Test
 	public void inserirServico() {
-		Servico servicoUnico = new ServicoMassa().popularServico();
+		Servico servicoUnico = new ServicoMassaTest().popularServico();
 		dao.insert(servicoUnico);
 		Assert.assertTrue(servicoUnico.getId() != null);
 	}
