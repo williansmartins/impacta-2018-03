@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.impacta.dao.JpaGenericDao;
-import br.com.impacta.model.TipoUsuario;
+import br.com.impacta.dao.UsuarioDAOImpl;
 import br.com.impacta.model.Usuario;
 
 @Controller
 @RequestMapping("/usuario")
 public class UsuarioController {
 
-	JpaGenericDao<Usuario> dao = new JpaGenericDao<Usuario>();
+	private JpaGenericDao<Usuario> dao = new UsuarioDAOImpl();
 	
 	@RequestMapping(value="/inserir", method=RequestMethod.POST)
 	@ResponseBody
