@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.impacta.dao.JpaGenericDao;
 import br.com.impacta.dao.UsuarioDAOImpl;
+import br.com.impacta.model.JsonResponse;
 import br.com.impacta.model.Usuario;
 
 @Controller
@@ -20,32 +21,52 @@ public class UsuarioController {
 	
 	@RequestMapping(value="/inserir", method=RequestMethod.POST)
 	@ResponseBody
-	public Usuario inserir(@RequestBody Usuario entrada) {
+	public JsonResponse inserir(@RequestBody Usuario entrada) {
 		dao.insert(entrada);
-		return entrada;
+		JsonResponse retorno = new JsonResponse(true, null, "Sucesso ao inserir");
+		return retorno ;
 	}
 	
 	@RequestMapping(value="/buscar", method=RequestMethod.GET)
 	@ResponseBody
-	public List<Usuario> buscar() {
-		return dao.findAll();
-	}
-	
-	@RequestMapping(value="/buscarEspecifico", method=RequestMethod.GET)
-	@ResponseBody
-	public Usuario buscarPessoasEspecifico(@RequestBody int primaryKey) {
-		return dao.findById(primaryKey);
-	}
-	
-	@RequestMapping(value="/deletar", method=RequestMethod.GET)
-	@ResponseBody
-	public boolean deletarPessoa(@RequestBody int primaryKey) {
-		dao.delete(primaryKey);
+	public JsonResponse buscar() {
+		List<Usuario> lista = dao.findAll();
 		
-		if(dao.findById(primaryKey) == null) {
-			return false;
+		if(lista != null){
+			return new JsonResponse(true, lista, "Sucesso ao buscar");
+		}else{
+			return new JsonResponse(false, null, "Erro ao buscar");
 		}
+	}
+	
+	@RequestMapping(value="/buscarPorId", method=RequestMethod.GET)
+	@ResponseBody
+	public JsonResponse buscarPorId(@RequestBody int primaryKey) {
+		Usuario usuario = dao.findById(primaryKey);
 		
-		return true;
+		if(usuario != null){
+			return new JsonResponse(true, usuario, "Sucesso ao buscar");
+		}else{
+			return new JsonResponse(false, null, "Erro ao buscar");
+		}
+	}
+	
+	@RequestMapping(value="/deletar", method=RequestMethod.DELETE)
+	@ResponseBody
+	public JsonResponse deletar(@RequestBody Usuario entrada) {
+		dao.delete(entrada.getId());
+		
+		if(dao.findById(entrada.getId()) == null) {
+			return new JsonResponse(true, null, "Sucesso ao deletar");
+		}else{
+			return new JsonResponse(false, null, "Erro ao deletar");
+		}
+	}
+	
+	@RequestMapping(value="/atualizar", method=RequestMethod.PUT)
+	@ResponseBody
+	public JsonResponse atualizar(@RequestBody Usuario entrada) {
+		dao.update(entrada);
+		return new JsonResponse(true, null, "Sucesso ao atualizar");
 	}
 }
