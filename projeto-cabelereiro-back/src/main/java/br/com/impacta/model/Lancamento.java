@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Lancamento implements Serializable{
@@ -15,6 +17,8 @@ public class Lancamento implements Serializable{
 	private ChaveComposta id;
 	private BigDecimal valor;
 	private Servico servico;
+	@OneToOne
+    @JoinColumn(name="idCliente")
 	private Usuario cliente;
 
 	public Lancamento() {

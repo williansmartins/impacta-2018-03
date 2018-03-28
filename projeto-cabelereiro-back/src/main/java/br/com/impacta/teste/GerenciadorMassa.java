@@ -14,22 +14,22 @@ public class GerenciadorMassa {
 	Usuario popularUsuario() {
 		
 		Usuario usuario = new Usuario();
-		usuario.setNome("Caique");
+		usuario.setNome("Willians");
 		usuario.setPorcentagem(10);
-		usuario.setTipo(TipoUsuario.ADMINISTRADOR);
+		usuario.setTipo(TipoUsuario.CLIENTE);
 		
 		return usuario;
 	}
 
-	public br.com.impacta.model.Lancamento popularLancamento() {
+	public br.com.impacta.model.Lancamento popularLancamento(Usuario funcionario, Servico servico, Usuario cliente) {
 		Lancamento lancamento = new Lancamento();
 		lancamento.setValor(new BigDecimal(123.45));
-		lancamento.setCliente(new Usuario());
-		lancamento.setServico(new Servico());
+		lancamento.setCliente(cliente);
+		lancamento.setServico(servico);
 		
 		ChaveComposta chave = new ChaveComposta();
+		chave.setFuncionario(funcionario);
 		chave.setData(new Date());
-		chave.setFuncionario(new Usuario());
 		
 		lancamento.setId(chave);
 		
