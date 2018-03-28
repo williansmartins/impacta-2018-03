@@ -24,7 +24,6 @@ public class PessoaDAOTest {
 		List<Pessoa> lista = dao.findAll();
 		Assert.assertNotNull( lista );
 	}
-<<<<<<< HEAD
 	
 	@Test
 	public void buscarPessoasEspecifico() {
@@ -38,16 +37,5 @@ public class PessoaDAOTest {
 		Pessoa lista = dao.findById(2);
 		Assert.assertNull( lista );
 	}
-=======
 
-	@Test
-	public void deletarPessoas() {
-		Pessoa pessoa = dao.findById(1);
-		Assert.assertNotNull( pessoa);
-		dao.delete(1);
-		pessoa = dao.findById(1);
-		Assert.assertNull( pessoa);		
-	}
-
->>>>>>> d55709c7d8e68a4b7c532ae227e463d1cfa9198f
 }

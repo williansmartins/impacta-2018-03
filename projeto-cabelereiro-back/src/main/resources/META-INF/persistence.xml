@@ -7,15 +7,9 @@
 		    <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 		    <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" /> <!-- driver do banco que ira usar -->
 		    
-<<<<<<< HEAD
 		    <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/test" /> 
 		    <property name="hibernate.connection.username" value="root" /> 
 		    <property name="hibernate.connection.password" value="Imp@ct@" /> 
-=======
-		    <property name="hibernate.connection.url" value="jdbc:mysql://comsystem.mysql.uhserver.com:3306/comsystem" /> 
-		    <property name="hibernate.connection.username" value="comsystem" /> 
-		    <property name="hibernate.connection.password" value="CS883644@" /> 
->>>>>>> d55709c7d8e68a4b7c532ae227e463d1cfa9198f
 
 			<property name="hibernate.show_sql" value="true" />   <!-- Mostra no console as mensagem que o MySql retorna -->
 		    <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- Cria uma tabela caso a mesma nao exista no banco de dados --> 

@@ -23,14 +23,15 @@ Apresentar:
 	- trello + git (bitbucket - professorwillians@gmail.com)
 	- rotas necessárias no back-end
 		- login
-		- crud usuarios
-		- crud produtos
-		- crud serviços
+		- crud usuarios (4+)
+		- crud servico (4+)
+		- crud lancamento
 			- inserir
+			- excluir
 			- buscar
 			- buscarTodos
 			- buscarLogado
-			- recebimentos do dia
+			- buscarPorPeriodo
 
 	- entidades
 		- usuario
