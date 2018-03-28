@@ -10,7 +10,7 @@ public class UsuarioDAO {
 	JpaGenericDao<Usuario> dao = new JpaGenericDao<Usuario>();
 	
 	@Test
-	public void inserirPessoa() {
+	public void inserirUsuario() {
 		Usuario usuario= new GerenciadorMassa().popularUsuario();
 		dao.insert(usuario);
 		Assert.assertTrue(usuario.getId() != null);

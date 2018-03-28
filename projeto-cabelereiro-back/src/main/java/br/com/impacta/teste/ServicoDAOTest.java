@@ -14,7 +14,7 @@ public class ServicoDAOTest {
 	JpaGenericDao<Servico> dao = new ServicoDAOImpl();
 	
 	@Test
-	public void inserirPessoa() {
+	public void inserirServico() {
 		Servico servicoUnico = new ServicoMassa().popularServico();
 		dao.insert(servicoUnico);
 		Assert.assertTrue(servicoUnico.getId() != null);
