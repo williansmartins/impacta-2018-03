@@ -10,7 +10,6 @@ import br.com.impacta.dao.PessoaDAOImpl;
 import br.com.impacta.model.Pessoa;
 
 public class PessoaDAOTest {
-
 	JpaGenericDao<Pessoa> dao = new PessoaDAOImpl();
 	
 	@Test
@@ -25,5 +24,17 @@ public class PessoaDAOTest {
 		List<Pessoa> lista = dao.findAll();
 		Assert.assertNotNull( lista );
 	}
-
+	
+	@Test
+	public void buscarPessoasEspecifico() {
+		Pessoa lista = dao.findById(1);
+		Assert.assertNotNull( lista );
+	}
+	
+	@Test
+	public void deletarPessoa() {
+		dao.delete(2);
+		Pessoa lista = dao.findById(2);
+		Assert.assertNull( lista );
+	}
 }
