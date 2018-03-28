@@ -26,4 +26,13 @@ public class PessoaDAOTest {
 		Assert.assertNotNull( lista );
 	}
 
+	@Test
+	public void deletarPessoas() {
+		Pessoa pessoa = dao.findById(1);
+		Assert.assertNotNull( pessoa);
+		dao.delete(1);
+		pessoa = dao.findById(1);
+		Assert.assertNull( pessoa);		
+	}
+
 }
