@@ -11,22 +11,21 @@ public class ChaveComposta implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Date data;
-	private Usuario funcionario;
+	private Integer funcionarioId;
 	
 	public Date getData() {
 		return data;
 	}
-
 	public void setData(Date data) {
 		this.data = data;
 	}
-
-	public Usuario getFuncionario() {
-		return funcionario;
+	public Integer getFuncionarioId() {
+		return funcionarioId;
+	}
+	public void setFuncionarioId(Integer funcionarioId) {
+		this.funcionarioId = funcionarioId;
 	}
 	
-	public void setFuncionario(Usuario funcionario) {
-		this.funcionario = funcionario;
-	}
+	
 
 }
