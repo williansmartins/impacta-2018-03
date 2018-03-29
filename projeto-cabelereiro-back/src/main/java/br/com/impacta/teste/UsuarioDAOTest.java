@@ -25,4 +25,11 @@ public class UsuarioDAOTest {
 		
 		Assert.assertNotNull( lista );
 	}
+	
+	@Test
+	public void logar() {
+		Boolean resposta = dao.logar("willian@impacta.com.br", "impacta");
+		
+		Assert.assertEquals(true, resposta );
+	}
 }
