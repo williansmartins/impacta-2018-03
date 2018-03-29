@@ -14,7 +14,7 @@ Projeto de apoio ao treinamento SPRING MVC
   - CRUD de lancamentos
   
 ## ASSINATURAS REST
-### USERS
+### USUÁRIO
 
 Buscar Todos
 ```
@@ -23,6 +23,14 @@ GET http://localhost:8080/cabelereiro-back/rest/usuario/buscar
 Inserir
 ```
 POST http://localhost:8080/cabelereiro-back/rest/usuario/inserir
+```
+Atualizar
+```
+PUT http://localhost:8080/cabelereiro-back/rest/usuario/atualizar
+```
+Deletar
+```
+DELETE http://localhost:8080/cabelereiro-back/rest/usuario/deletar
 ```
 
 ### SERVICO
