@@ -22,10 +22,10 @@ GET http://localhost:8080/cabelereiro-back/rest/usuario/buscar
 ```
 Inserir
 ```
-POST POST http://localhost:8080/cabelereiro-back/rest/usuario/inserir
+POST http://localhost:8080/cabelereiro-back/rest/usuario/inserir
 ```
 
 
-## License
+## Licença
 
 MIT
