@@ -20,14 +20,17 @@ Buscar Todos
 ```
 GET http://localhost:8080/cabelereiro-back/rest/usuario/buscar
 ```
+
 Inserir
 ```
 POST http://localhost:8080/cabelereiro-back/rest/usuario/inserir
 ```
+
 Atualizar
 ```
 PUT http://localhost:8080/cabelereiro-back/rest/usuario/atualizar
 ```
+
 Deletar
 ```
 DELETE http://localhost:8080/cabelereiro-back/rest/usuario/deletar
@@ -39,17 +42,21 @@ Buscar Todos
 ```
 GET http://localhost:8080/cabelereiro-back/rest/servico/buscar
 ```
+
 Inserir
 ```
 POST http://localhost:8080/cabelereiro-back/rest/servico/inserir
 ```
+
 Atualizar
 ```
 PUT http://localhost:8080/cabelereiro-back/rest/servico/atualizar
 ```
+
 Deletar
 ```
 DELETE http://localhost:8080/cabelereiro-back/rest/servico/deletar
+```
 
 ### LANCAMENTO
 
@@ -57,17 +64,21 @@ Buscar Todos
 ```
 GET http://localhost:8080/cabelereiro-back/rest/lancamento/buscar
 ```
+
 Inserir
 ```
 POST http://localhost:8080/cabelereiro-back/rest/lancamento/inserir
 ```
+
 Atualizar
 ```
 PUT http://localhost:8080/cabelereiro-back/rest/lancamento/atualizar
 ```
+
 Deletar
 ```
 DELETE http://localhost:8080/cabelereiro-back/rest/lancamento/deletar
+```
 
 ## Licença
 
