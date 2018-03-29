@@ -8,17 +8,17 @@
 	<link href="css/custom.css" rel="stylesheet">
 	<link href="css/modern-business.css" rel="stylesheet">
 </head>
-<body>
+<body ng-app>
 	<div class="container">
 	    <div class="row">
 	        <div class="col-sm-12 col-md-8 center">
 	            <div class="account-wall">
 	                <img class="profile-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwuHDxGOPsGYpgGIlnDjTr9vXhQeruMExgcQ8PVn4XqD7LYUBrfw"
 	                    alt="">
-	            	<h1 class="text-center login-title">LOGIN</h1>
+	            	<h5 class="text-center login-title">LOGIN - {{email}}</h5>
 	                <form class="form-signin">
-		                <input type="text" class="form-control" placeholder="Email" required autofocus>
-		                <input type="password" class="form-control" placeholder="Password" required>
+		                <input type="text" ng-model="email" class="form-control" placeholder="Email" required autofocus>
+		                <input type="password" ng-model="senha" class="form-control" placeholder="Password" required>
 		                <button class="btn btn-lg btn-primary btn-block" type="submit">entrar</button>
 		                <button class="btn btn-lg btn-success btn-block" type="submit">cadastrar</button>
 		                <div class="alert alert-danger hide" role="alert">
@@ -40,6 +40,7 @@
 	<div class="scripts">
 	    <script src="js/vendor/jquery/jquery.min.js"></script>
 	    <script src="js/vendor/bootstrap/bootstrap.min.js"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	</div>
 </body>
 </html>
