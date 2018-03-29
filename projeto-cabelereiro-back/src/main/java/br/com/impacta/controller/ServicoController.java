@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.impacta.dao.JpaGenericDao;
+import br.com.impacta.dao.ServicoDAOImpl;
 import br.com.impacta.model.JsonResponse;
 import br.com.impacta.model.Servico;
-import br.com.impacta.model.Usuario;
 
 @Controller
 @RequestMapping("/servico")
 public class ServicoController {
 
-	JpaGenericDao<Servico> dao = new JpaGenericDao<Servico>();
+	JpaGenericDao<Servico> dao = new ServicoDAOImpl();
 	
 	@RequestMapping(value="/inserir", method=RequestMethod.POST)  
 	@ResponseBody

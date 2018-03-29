@@ -30,9 +30,14 @@ public class ServicoDAOTest {
 	public void deletarServico() {
 		Servico servico = dao.findById(1);
 		Assert.assertNotNull(servico);
-		dao.delete(1);
-		servico = dao.findById(1);
-		Assert.assertNull(servico);		
+		try {
+			dao.delete(1);
+			servico = dao.findById(1);
+			Assert.assertNull(servico);		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
