@@ -1,31 +1,8 @@
 # IMPACTA-BACK-END-2
 Projeto de apoio ao treinamento SPRING MVC
 
-## Requisitos
+## Projetos Relacionados
 
-  - JAVA 1.7+
-  - MAVEN 3.3.3+
-  - MYSQL
-
-## Funcionalidades
-
-  - CRUD de usuarios
-  - CRUD de serviços
-  - CRUD de lancamentos
+  - [CABELEREIROS-BACK-END](https://github.com/williansmartins/impacta-back-end-2/tree/master/projeto-cabelereiro-back): CABELEREIROS-BACK-END.
+  - [CABELEREIROS-FRONT-END](https://github.com/williansmartins/impacta-back-end-2/tree/master/projeto-cabelereiros-front): CABELEREIROS-FRONT-END.
   
-## ASSINATURAS REST
-### USERS
-
-Buscar Todos
-```
-GET http://localhost:8080/cabelereiro-back/rest/usuario/buscar
-```
-Inserir
-```
-POST POST http://localhost:8080/cabelereiro-back/rest/usuario/inserir
-```
-
-
-## License
-
-MIT
