@@ -68,7 +68,7 @@ public class JpaGenericDao<T extends Serializable> implements Dao<T>{
 	}
 	
 	@Override
-	public void delete(Integer primaryKey) {
+	public void delete(Integer primaryKey) throws Exception {
 		entityManager = getEntityManager();
 		try{
 			T entity = (T) entityManager.find(getGenericClass(), primaryKey);
@@ -77,6 +77,7 @@ public class JpaGenericDao<T extends Serializable> implements Dao<T>{
 			entityManager.getTransaction().commit();
 		}catch (Exception e) {
 			System.out.println(">> "+e.getMessage());
+			throw new Exception(e.getMessage());
 		}
 		finally {
 			entityManager.close();

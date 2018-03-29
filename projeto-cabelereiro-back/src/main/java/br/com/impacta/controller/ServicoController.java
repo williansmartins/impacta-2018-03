@@ -12,7 +12,7 @@ import br.com.impacta.dao.JpaGenericDao;
 import br.com.impacta.model.Servico;
 
 @Controller
-@RequestMapping("/cabelereiro/servico")
+@RequestMapping("/servico")
 public class ServicoController {
 
 	JpaGenericDao<Servico> dao = new JpaGenericDao<Servico>();
@@ -36,7 +36,12 @@ public class ServicoController {
 	@ResponseBody
 	public void buscar(Integer idKey) {
 		
-		dao.delete(idKey);
+		try {
+			dao.delete(idKey);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}	
 }

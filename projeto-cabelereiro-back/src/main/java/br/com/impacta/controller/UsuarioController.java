@@ -54,13 +54,13 @@ public class UsuarioController {
 	@RequestMapping(value="/deletar", method=RequestMethod.DELETE)
 	@ResponseBody
 	public JsonResponse deletar(@RequestBody Usuario entrada) {
-		dao.delete(entrada.getId());
-		
-		if(dao.findById(entrada.getId()) == null) {
+		try {
+			dao.delete(entrada.getId());
 			return new JsonResponse(true, null, "Sucesso ao deletar");
-		}else{
+		} catch (Exception e) {
 			return new JsonResponse(false, null, "Erro ao deletar");
 		}
+		
 	}
 	
 	@RequestMapping(value="/atualizar", method=RequestMethod.PUT)
