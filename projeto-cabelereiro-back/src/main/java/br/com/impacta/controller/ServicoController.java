@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.impacta.dao.JpaGenericDao;
+import br.com.impacta.model.JsonResponse;
 import br.com.impacta.model.Servico;
+import br.com.impacta.model.Usuario;
 
 @Controller
 @RequestMapping("/servico")
@@ -19,29 +21,54 @@ public class ServicoController {
 	
 	@RequestMapping(value="/inserir", method=RequestMethod.POST)  
 	@ResponseBody
-	public void inserir(@RequestBody Servico entrada) {
-		
+	public JsonResponse inserir(@RequestBody Servico entrada) {		
 		dao.insert(entrada);
+		JsonResponse retorno = new JsonResponse(true, null, "Sucesso ao inserir");
+		return retorno ;
 	}
 
 	@RequestMapping(value="/buscar", method=RequestMethod.GET)  
 	@ResponseBody
-	public List<Servico> buscar() {
+	public JsonResponse buscar() {
 		
 		List<Servico> servico = dao.findAll();
-		return servico;
+		if(servico != null){
+			return new JsonResponse(true, servico, "Sucesso ao buscar");
+		}else{
+			return new JsonResponse(false, null, "Erro ao buscar");
+		}
 	}	
 
-	@RequestMapping(value="/delete", method=RequestMethod.GET)  
+	@RequestMapping(value="/buscarPorId", method=RequestMethod.GET)
 	@ResponseBody
-	public void buscar(Integer idKey) {
+	public JsonResponse buscarPorId(@RequestBody int primaryKey) {
+		Servico servico = dao.findById(primaryKey);
+		
+		if(servico != null){
+			return new JsonResponse(true, servico, "Sucesso ao buscar");
+		}else{
+			return new JsonResponse(false, null, "Erro ao buscar");
+		}
+	}
+	
+	@RequestMapping(value="/delete", method=RequestMethod.DELETE)  
+	@ResponseBody
+	public JsonResponse delete(@RequestBody Servico entrada) {
 		
 		try {
-			dao.delete(idKey);
+			dao.delete(entrada.getId());
+			return new JsonResponse(true, null, "Sucesso ao deletar");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			return new JsonResponse(false, null, "Erro ao deletar");
 		}
 		
+	}
+	
+	@RequestMapping(value="/atualizar", method=RequestMethod.PUT)
+	@ResponseBody
+	public JsonResponse atualizar(@RequestBody Servico entrada) {
+		dao.update(entrada);
+		return new JsonResponse(true, null, "Sucesso ao atualizar");
 	}	
+	
 }
