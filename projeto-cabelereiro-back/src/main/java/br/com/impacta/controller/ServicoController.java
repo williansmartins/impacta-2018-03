@@ -51,7 +51,7 @@ public class ServicoController {
 		}
 	}
 	
-	@RequestMapping(value="/delete", method=RequestMethod.DELETE)  
+	@RequestMapping(value="/deletar", method=RequestMethod.DELETE)  
 	@ResponseBody
 	public JsonResponse delete(@RequestBody Servico entrada) {
 		
