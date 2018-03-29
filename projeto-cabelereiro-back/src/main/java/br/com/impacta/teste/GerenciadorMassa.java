@@ -13,6 +13,8 @@ public class GerenciadorMassa {
 		
 		Usuario usuario = new Usuario();
 		usuario.setNome("Willians");
+		usuario.setEmail("willian@impacta.com.br");
+		usuario.setSenha("impacta");
 		usuario.setPorcentagem(10);
 		usuario.setTipo(TipoUsuario.CLIENTE);
 		

@@ -15,6 +15,8 @@ public class Usuario implements Serializable {
 	@Id @GeneratedValue
 	private Integer id;
 	private String nome;
+	private String email;
+	private String senha;
 	private float porcentagem;
 	
 	@Enumerated
@@ -50,6 +52,22 @@ public class Usuario implements Serializable {
 	
 	public void setTipo(TipoUsuario tipo) {
 		this.tipo = tipo;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 	
 	public String toString() {
