@@ -5,11 +5,6 @@ angular.module('app', [])
 	$scope.mensagem = "";
 	$scope.flagApresentarLogin = true;
 
-	$scope.usuario = {
-		"email" : "admin1@cabelereiros.com.br",
-		"senha" : "abc123"
-	}
-
 	var sessao = $window.localStorage;
 
 	var limparCampos = function(){
@@ -19,6 +14,13 @@ angular.module('app', [])
 			"id" : "",
 			"tipo" : null,
 			"nome" : ""
+		}
+	}
+
+	$scope.preencherUsuario = function(){
+		$scope.usuario = {
+			"email" : "admin1@cabelereiros.com.br",
+			"senha" : "abc123"
 		}
 	}
 

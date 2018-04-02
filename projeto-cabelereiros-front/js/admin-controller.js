@@ -10,8 +10,15 @@ angular.module('app', [])
 		window.location = "index.html";
 	}
 
+	$scope.voltar = function(){
+		window.location = "admin.html";
+	}
+
+	$scope.apresentarGerenciarUsuarios = function(){
+		window.location = "usuarios.html";
+	}
+
 	var init = function(){
-		// console.info(sessao.usuario_nome);
 		$scope.usuario.nome = sessao.usuario_nome;
 	}
 

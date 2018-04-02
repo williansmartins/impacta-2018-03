@@ -13,21 +13,32 @@
 	    <div class="row">
 	        <div class="col-sm-12 col-md-8 center">
 	            <div class="account-wall">
-	                <img class="profile-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwuHDxGOPsGYpgGIlnDjTr9vXhQeruMExgcQ8PVn4XqD7LYUBrfw"
-	                    alt="">
-	            	<h5 class="text-center">Bem vindo!</h5>
-	            	<h6 class="text-center" ng-bind="usuario.nome"></h6>
+	            	<h5 class="text-center">Gerenciamento de usuários</h5>
 	                <div class="wrapper-form">
-		                <button class="btn btn-lg btn-primary btn-block" 
-		                		type="buttom" 
-		                		ng-click="apresentarGerenciarUsuarios()">gerenciar usuários
-	                	</button>
-		                <button class="btn btn-lg btn-primary btn-block" 
-		                		type="buttom" >gerenciar serviços
-                		</button>
-                		<button class="btn btn-lg btn-primary btn-block" 
-		                		type="buttom" >fechamento diário
-                		</button>
+	                	<table class="table">
+	                		<tr>
+	                			<th>coluna1</th>
+	                			<th>coluna2</th>
+	                		</tr>
+	                		<tr>
+	                			<td>valor1</td>
+	                			<td>editar | excluir</td>
+	                		</tr>
+	                		<tr>
+	                			<td>valor1</td>
+	                			<td>editar | excluir</td>
+	                		</tr>
+	                		<tr>
+	                			<td>valor1</td>
+	                			<td>editar | excluir</td>
+	                		</tr>
+	                		<tr>
+	                			<td>valor1</td>
+	                			<td>editar | excluir</td>
+	                		</tr>
+	                	</table>
+	                	<button class="btn btn-lg btn-success btn-block" type="button">novo</button>
+	                	<button class="btn btn-lg btn-warning btn-block" type="button" ng-click="voltar()">voltar</button>
                 		<button class="btn btn-lg btn-danger btn-block" 
 		                		type="buttom" ng-click="sair()">sair
                 		</button>
