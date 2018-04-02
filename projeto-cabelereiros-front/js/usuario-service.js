@@ -12,6 +12,14 @@ function UsuarioService ($http) {
             })
         },
 
+        logar : function (entidade) {
+            return $http({
+                method : "POST",
+                url : back + "/cabelereiro-back/rest/usuario/logar",
+                data: entidade
+            })
+        },
+
         inserir : function (entidade) {
             return $http({
                 method : "POST",

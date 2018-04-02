@@ -3,17 +3,22 @@ angular.module('app', [])
 	
 	$scope.resposta = false;
 	$scope.usuario = {
-		"email" : "professorwillians@gmail.com",
+		"email" : "contato@williansmartins.com",
 		"senha" : "secreta"
 	}
 
 	$scope.logar = function(){
-		UsuarioService.inserir($scope.usuario).then(
+		UsuarioService.logar($scope.usuario).then(
 			function(resposta){
-				$scope.resposta = true;
+				console.info(resposta);
+
+				if(resposta.data.sucesso){
+					$scope.resposta = true;
+				}
 			}, 
 			function(resposta){
 				$scope.resposta = false;
+				console.info(resposta);
 			}
 		);
 	}
