@@ -14,7 +14,7 @@ import br.com.impacta.model.JsonResponse;
 import br.com.impacta.model.Usuario;
 
 @Controller
-@RequestMapping("/usuario")
+@RequestMapping("/lancamento")
 public class LancamentoController {
 
 	private JpaGenericDao<Usuario> dao = new UsuarioDAOImpl();
