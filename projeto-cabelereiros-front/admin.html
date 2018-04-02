@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Admin</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
 	<link href="css/vendor/fontawesome/fontawesome-all.css" rel="stylesheet">
 	<link href="css/custom.css" rel="stylesheet">
 	<link href="css/modern-business.css" rel="stylesheet">
 </head>
-<body ng-app="app" ng-controller="UsuarioController">
+<body ng-app="app" ng-controller="AdminController">
 	<div class="container">
 	    <div class="row">
 	        <div class="col-sm-12 col-md-8 center">
 	            <div class="account-wall">
 	                <img class="profile-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwuHDxGOPsGYpgGIlnDjTr9vXhQeruMExgcQ8PVn4XqD7LYUBrfw"
 	                    alt="">
-	            	<h5 class="text-center login-title">LOGIN</h5>
-	                <form class="form-signin">
-		                <input type="text" ng-model="usuario.email" class="form-control" placeholder="Email" required autofocus>
-		                <input type="password" ng-model="usuario.senha" class="form-control" placeholder="Password" required>
+	            	<h5 class="text-center">Bem vindo!</h5>
+	            	<h6 class="text-center" ng-bind="usuario.nome"></h6>
+	                <div class="wrapper-form">
 		                <button class="btn btn-lg btn-primary btn-block" 
-		                		type="submit" 
-		                		ng-disabled="!usuario.email || !usuario.senha" 
-		                		ng-click="logar()">entrar
+		                		type="buttom" 
+		                		ng-click="xxx()">gerenciar usuários
 	                	</button>
-		                <button class="btn btn-lg btn-success btn-block" type="submit" >cadastrar</button>
-		                <div class="alert alert-danger" role="alert" ng-if="flagErro">
-						  <i class="fas fa-exclamation-triangle"></i>
-						  <span class="sr-only">Error:</span>
-						  <span ng-bind="mensagem"></span>
-						</div>
-	                </form>
+		                <button class="btn btn-lg btn-primary btn-block" 
+		                		type="buttom" >gerenciar serviços
+                		</button>
+                		<button class="btn btn-lg btn-primary btn-block" 
+		                		type="buttom" >fechamento diário
+                		</button>
+                		<button class="btn btn-lg btn-danger btn-block" 
+		                		type="buttom" ng-click="sair()">sair
+                		</button>
+	                </div>
 	            </div>
 	        </div>
 	    </div>
@@ -40,10 +41,10 @@
 	    <script src="js/vendor/jquery/jquery.min.js"></script>
 	    <script src="js/vendor/bootstrap/bootstrap.min.js"></script>
 	    <script src="js/vendor/angularjs/angular.min.js"></script>
-	    <script src="js/vendor/angularjs/ngStorage.min.js"></script>
 	    <script src="js/app.js"></script>
 	    <script src="js/usuario-controller.js"></script>
 	    <script src="js/usuario-service.js"></script>
+	    <script src="js/admin-controller.js"></script>
 	    
 	</div>
 </body>
