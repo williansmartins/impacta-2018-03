@@ -28,8 +28,8 @@ public class UsuarioDAOTest {
 	
 	@Test
 	public void logar() {
-		Boolean resposta = dao.logar("willian@impacta.com.br", "impacta");
+		List<Usuario> lista = dao.logar("contato@williansmartins.com", "secreta");
 		
-		Assert.assertEquals(true, resposta );
+		Assert.assertNotNull( lista );
 	}
 }

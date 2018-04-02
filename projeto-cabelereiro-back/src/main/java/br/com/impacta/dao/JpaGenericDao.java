@@ -129,7 +129,7 @@ public class JpaGenericDao<T extends Serializable> implements Dao<T>{
 		}
 		return entityManager;
 	}
-	public Boolean logar(String email, String senha){
+	public List<T> logar(String email, String senha){
 		entityManager = getEntityManager();	
 		entityManager.getTransaction().begin();
 		String jpql = "select a from usuario a where a.email= :email and a.senha= :senha";
@@ -139,13 +139,11 @@ public class JpaGenericDao<T extends Serializable> implements Dao<T>{
 		query.setParameter("senha", senha);
 
 		entityManager.getTransaction().commit();
-		lista = query.getResultList();
+		List<T> lista = query.getResultList();
 		
-		if(lista.size() > 0){
-			return true;
-		}else{
-			return false;
-		}
+		entityManager.clear();
+		
+		return lista;
 	}
 
 	@Override

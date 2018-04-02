@@ -51,6 +51,21 @@ public class UsuarioController {
 		}
 	}
 	
+	@RequestMapping(value="/logar", method=RequestMethod.POST)
+	@ResponseBody
+	public JsonResponse logar(@RequestBody Usuario entrada) {
+		List<Usuario> lista = dao.logar(entrada.getEmail(), entrada.getSenha());
+		
+		if(lista != null && lista.size()>0){
+			Usuario usuario = lista.get(0);
+			usuario.setSenha("***");
+			usuario.setId(null);
+			return new JsonResponse(true, lista, "Sucesso ao logar");
+		}else{
+			return new JsonResponse(false, null, "Erro ao logar");
+		}
+	}
+	
 	@RequestMapping(value="/deletar", method=RequestMethod.DELETE)
 	@ResponseBody
 	public JsonResponse deletar(@RequestBody Usuario entrada) {
