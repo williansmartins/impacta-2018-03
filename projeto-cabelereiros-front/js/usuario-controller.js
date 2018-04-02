@@ -5,8 +5,8 @@ angular.module('app', [])
 	$scope.mensagem = "";
 
 	$scope.usuario = {
-		"email" : "contato2@williansmartins.com",
-		"senha" : "secreta"
+		"email" : "admin1@cabelereiros.com.br",
+		"senha" : "abc123"
 	}
 	var sessao = $window.localStorage;
 
@@ -16,10 +16,17 @@ angular.module('app', [])
 				console.info(resposta);
 
 				if(resposta.data.sucesso){
+					$scope.flagErro = false;
+					
 					var usuario = resposta.data.objeto[0];
 					sessao.usuario_nome = usuario.nome;
-					$scope.flagErro = false;
-					window.location = "admin.html";
+
+					if(usuario.tipo == "ADMINISTRADOR"){
+						window.location = "admin.html";
+					}else{
+						window.location = "funcionario.html";
+					}
+
 				}else{
 					$scope.flagErro = true;
 					$scope.mensagem = resposta.data.mensagem;
