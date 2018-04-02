@@ -17,25 +17,18 @@
 	                <div class="wrapper-form">
 	                	<table class="table">
 	                		<tr>
-	                			<th>coluna1</th>
-	                			<th>coluna2</th>
+	                			<th>Nome</th>
+	                			<th>Ações</th>
 	                		</tr>
-	                		<tr>
-	                			<td>nome do usuário</td>
-	                			<td>editar | excluir</td>
+	                		<tr ng-repeat="usuario in usuarios">
+	                			<td>{{usuario.nome}}</td>
+	                			<td>
+	                				<a href="javascript:void(0)">editar</a> 
+	                					| 
+                					<a href="javascript:void(0)" ng-click="excluir(usuario)">excluir</a>
+	                			</td>
 	                		</tr>
-	                		<tr>
-	                			<td>nome do usuário</td>
-	                			<td>editar | excluir</td>
-	                		</tr>
-	                		<tr>
-	                			<td>nome do usuário</td>
-	                			<td>editar | excluir</td>
-	                		</tr>
-	                		<tr>
-	                			<td>nome do usuário</td>
-	                			<td>editar | excluir</td>
-	                		</tr>
+	                		
 	                	</table>
 	                	<button class="btn btn-lg btn-success btn-block" type="button">novo</button>
 	                	<button class="btn btn-lg btn-warning btn-block" type="button" ng-click="voltar()">voltar</button>
@@ -53,8 +46,8 @@
 	    <script src="js/vendor/bootstrap/bootstrap.min.js"></script>
 	    <script src="js/vendor/angularjs/angular.min.js"></script>
 	    <script src="js/app.js"></script>
-	    <script src="js/usuario-controller.js"></script>
 	    <script src="js/usuario-service.js"></script>
+	    <script src="js/usuario-controller.js"></script>
 	    <script src="js/admin-controller.js"></script>
 	    
 	</div>
