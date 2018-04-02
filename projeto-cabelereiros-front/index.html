@@ -15,21 +15,45 @@
 	            <div class="account-wall">
 	                <img class="profile-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwuHDxGOPsGYpgGIlnDjTr9vXhQeruMExgcQ8PVn4XqD7LYUBrfw"
 	                    alt="">
-	            	<h5 class="text-center login-title">LOGIN</h5>
-	                <form class="form-signin">
-		                <input type="text" ng-model="usuario.email" class="form-control" placeholder="Email" required autofocus>
-		                <input type="password" ng-model="usuario.senha" class="form-control" placeholder="Password" required>
+	            	<h5 class="text-center login-title">CADASTRO</h5>
+	                <form class="form-signin" ng-show="flagApresentarLogin">
+		                <input type="text" ng-model="usuario.email" class="form-control"  autocomplete="new-password" placeholder="Email" required autofocus>
+		                <input type="password" ng-model="usuario.senha" class="form-control"  autocomplete="new-password" placeholder="Password" required>
 		                <button class="btn btn-lg btn-primary btn-block" 
 		                		type="submit" 
 		                		ng-disabled="!usuario.email || !usuario.senha" 
 		                		ng-click="logar()">entrar
 	                	</button>
-		                <button class="btn btn-lg btn-success btn-block" type="submit" >cadastrar</button>
+		                <button class="btn btn-lg btn-success btn-block" type="button" ng-click="apresentarLogin(false)">cadastrar</button>
 		                <div class="alert alert-danger" role="alert" ng-if="flagErro">
 						  <i class="fas fa-exclamation-triangle"></i>
 						  <span class="sr-only">Error:</span>
 						  <span ng-bind="mensagem"></span>
 						</div>
+	                </form>
+	                <form class="form-signup wrapper-form" ng-show="!flagApresentarLogin">
+		                <select class="form-control" ng-model="usuario.tipo">
+		                	<option value="">selecione um tipo</option>
+		                	<option value="ADMINISTRADOR">Administrador</option>
+		                	<option value="CLIENTE">Cliente</option>
+		                	<option value="FUNCIONARIO">Funcionário</option>
+		                </select>
+	                	<input type="text" ng-model="usuario.nome" class="form-control" placeholder="nome" autocomplete="new-password" required autofocus>
+	                	<input type="text" ng-model="usuario.email" class="form-control" placeholder="email" autocomplete="new-password" required autofocus>
+		                <input type="password" ng-model="usuario.senha" class="form-control" placeholder="password" autocomplete="new-password" required>
+		                <input type="number" 
+		                		ng-model="usuario.porcentagem" 
+		                		class="form-control" 
+		                		placeholder="porcentagem" 
+		                		ng-show="usuario.tipo == 'FUNCIONARIO'"
+		                		step="5" 
+		                		min="0" 
+		                		max="100">
+        				<button class="btn btn-lg btn-primary btn-block" type="button" 
+        						ng-click="cadastrar()"
+        						ng-disabled="!usuario.tipo || !usuario.nome || !usuario.email || !usuario.senha" >cadastrar
+						</button>
+        				<button class="btn btn-lg btn-warning btn-block" type="button" ng-click="apresentarLogin(true)">voltar</button>
 	                </form>
 	            </div>
 	        </div>
